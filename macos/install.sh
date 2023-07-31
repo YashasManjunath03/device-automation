@@ -57,6 +57,7 @@ echo "Installing blocking packages please stay here and enter credentials as nee
 brew install --cask dotnet-sdk
 brew install --cask microsoft-teams
 brew install --cask microsoft-word
+softwareupdate --install-rosetta
 echo "Done. You can now go and let the script install the rest."
 
 ################
