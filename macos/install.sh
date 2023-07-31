@@ -10,7 +10,7 @@ sudo -v
 # Ask user for required information.
 read -p "Enter your work company name: " company_name
 # Define needed variables.
-git_user_name=robin-thoene
+git_user_name=YashasManjunath03
 git_automation_repo_name=device-automation
 git_user_dir=~/dev/$git_user_name
 git_company_dir=~/dev/$company_name
@@ -56,7 +56,6 @@ echo "Done."
 echo "Installing blocking packages please stay here and enter credentials as needed..."
 brew install --cask dotnet-sdk
 brew install --cask microsoft-teams
-brew install --cask mactex
 brew install --cask microsoft-word
 echo "Done. You can now go and let the script install the rest."
 
@@ -117,18 +116,11 @@ echo "Done."
 ###########
 
 echo "Installing utility packages..."
-brew install --cask macpass
-brew install --cask inkscape
-brew install --cask teamviewer
 brew tap homebrew/cask-drivers
 brew install logitech-options
-brew install --cask gyazo
 brew install --cask iterm2
 # Download the dracula theme for iterm2.
 cd $git_dracula_dir && git clone https://github.com/dracula/iterm.git
-brew install --cask nordvpn
-brew install --cask alfred
-brew install --cask logseq
 echo "Done."
 
 ###############
@@ -157,7 +149,6 @@ brew install cocoapods
 
 # SDK
 dotnet tool install --global dotnet-ef
-brew install openjdk
 
 # IDE / Editor
 brew install --cask visual-studio-code
@@ -167,7 +158,6 @@ brew install --cask rider
 brew install --cask microsoft-azure-storage-explorer
 brew install --cask postman
 brew install --cask azure-data-studio
-brew install --cask mysqlworkbench
 brew install --cask redisinsight
 brew install --cask podman-desktop
 echo "Done."
@@ -177,9 +167,7 @@ echo "Done."
 #################
 
 echo "Installing communication packages..."
-brew install --cask thunderbird
 brew install --cask discord
-brew install --cask signal
 echo "Done."
 
 #########
@@ -196,7 +184,6 @@ echo "Done."
 ################
 
 echo "Installing office tools..."
-brew install --cask texmaker
 brew install --cask microsoft-excel
 brew install --cask microsoft-powerpoint
 brew install --cask onedrive
@@ -216,15 +203,6 @@ brew install mas
 mas install 497799835
 # Install ColorSlurp from app store.
 mas install 1287239339
-# Install better snap tool from app store.
-mas install 417375580
 # Install Outlook from app store.
 mas install 985367838
 echo "Done."
-
-read -p "Please start iterm2 and import light and dark mode color themes."
-read -p "Please setup automatic theme switch script for iterm2 (https://iterm2.com/python-api/examples/theme.html)."
-read -p "Please set iterm2 as default terminal."
-
-# Set the iterm2 color themes that are imported in the automatic theme switch script.
-sed -i '' 's/Dark Background/Dracula/g' ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/theme/theme/theme.py && sed -i '' 's/Light Background/iterm2_light/g' ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/theme/theme/theme.py
